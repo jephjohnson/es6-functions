@@ -1,1 +1,1 @@
-# es6-functions
+# Various ES6 Functions

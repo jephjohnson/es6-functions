@@ -1,0 +1,267 @@
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url('../fonts/Geogrotesque-Bold.otf') format("opentype");
+}
+
+body {
+  background: black;
+  margin: 0 auto;
+  font-family: 'Geogrotesque';
+}
+
+section {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  background: url(../images/bg.jpg);
+  background-size: cover;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 12rem;
+  margin: 0 auto;
+}
+
+
+.btn:hover+.meter>span:after {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.custom-dropdown select {
+  background-color: #ff3600;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem 8rem 1rem 1rem;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button;
+ /* hide default arrow in chrome OSX */
+  width: 100%;
+  font-family: 'Geogrotesque';
+
+}
+.custom-dropdown::before, .custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.custom-dropdown::after {
+  content: "\25BC";
+  height: 1rem;
+  font-size: .625rem;
+  line-height: 1;
+  right: 1rem;
+  top: 50%;
+  margin-top: -0.5rem;
+}
+.custom-dropdown::before {
+  width: 2.5rem;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+.custom-dropdown::before {
+  background-color: #d62d00;
+}
+.custom-dropdown::after {
+  color: white;
+}
+
+
+
+/* Progress Bar */
+.meter {
+  height: 6px;
+  position: absolute;
+  margin: 0;
+  background: none;
+  padding: 0;
+  width: 100%;
+  bottom: 0;
+  left:0;
+}
+
+.drop.orange {
+  background: #ea471c;
+  height: 6px;
+  position: absolute;
+  z-index: 9;
+  width: 40px;
+  right: 0;
+}
+.meter.grey>span {
+  display: block;
+  height: 100%;
+  background-color: rgb(51, 51, 51);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #333333), color-stop(1, rgb(51, 51, 51)));
+  background-image: -moz-linear-gradient( center bottom, rgb(51, 51, 51) 37%, rgb(51, 51, 51) 69%);
+  position: relative;
+  overflow: hidden;
+}
+.meter.orange>span {
+  display: block;
+  height: 100%;
+  background-color: rgb(43, 194, 83);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #ff3300), color-stop(1, rgb(255, 51, 0)));
+  background-image: -moz-linear-gradient( center bottom, rgb(255, 54, 0) 37%, rgb(255, 54, 0) 69%);
+  position: relative;
+  overflow: hidden;
+}
+.meter.white>span {
+  display: block;
+  height: 100%;
+  background-color: rgb(210, 210, 210);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #d2d2d2), color-stop(1, rgb(210, 210, 210)));
+  background-image: -moz-linear-gradient( center bottom, rgb(210, 210, 210) 37%, rgb(210, 210, 210) 69%);
+  position: relative;
+  overflow: hidden;
+}
+.meter>span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+  background-image: -moz-linear-gradient( -45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  z-index: 1;
+  -webkit-background-size: 7px 7px;
+  -moz-background-size: 7px 7px;
+  -webkit-animation: move 2s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  overflow: hidden;
+}
+
+.meter.outanim>span:after {
+  -webkit-animation: moveout 2s linear infinite;
+}
+
+.meter.outanim.paused>span:after {
+  -webkit-animation-play-state: paused !important;
+  -moz-animation-play-state: paused !important;
+  -o-animation-play-state: paused !important; 
+  animation-play-state: paused !important;
+}
+
+@-webkit-keyframes move {
+  0% {
+      background-position: 0 0;
+ }
+  100% {
+      background-position: 20px 20px;
+ }
+}
+
+@-webkit-keyframes moveout {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 70px 70px;
+  }
+}
+
+
+
+
+/*Button*/
+button {
+  position: relative;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button;
+ /* hide default arrow in chrome OSX */
+  width: 100%;
+  font-family: 'Geogrotesque';
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn.grey {
+  background-color: #333333;
+}
+
+.btn.orange {
+  background-color: #ea471c;
+}
+.btn.white {
+  background-color: white;
+  color: #ff3600;
+}
+
+.fade {
+  display: block;
+  width: 100%;
+  height: 6px;
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+}
+
+.fade.orange {
+  background: -moz-linear-gradient(left, rgba(234,71,28,0) 0%, rgba(234,71,28,1) 90%, rgba(234,71,28,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(234,71,28,0) 0%,rgba(234,71,28,1) 90%,rgba(234,71,28,1) 100%);
+  background: linear-gradient(to right, rgba(234,71,28,0) 44%,rgba(234,71,28,1) 90%,rgba(234,71,28,1) 100%);
+}
+
+.fade.grey {
+  background: -moz-linear-gradient(left, rgba(85,85,85,0) 0%, rgba(85,85,85,1) 90%, rgba(85,85,85,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(85,85,85,0) 0%,rgba(85,85,85,1) 90%,rgba(85,85,85,1) 100%);
+  background: linear-gradient(to right, rgba(85,85,85,0) 44%,rgba(85,85,85,1) 90%,rgba(85,85,85,1) 100%);
+}
+
+.fade.white {
+  background: -moz-linear-gradient(left, rgba(228,228,228,0) 0%, rgba(228,228,228,1) 90%, rgba(228,228,228,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(228,228,228,0) 0%,rgba(228,228,228,1) 90%,rgba(228,228,228,1) 100%);
+  background: linear-gradient(to right, rgba(228,228,228,0) 44%,rgba(228,228,228,1) 90%,rgba(228,228,228,1) 100%);
+}
+
+
+/*SVG Animations*/
+.st0 {
+  fill:white;
+  opacity: 0;
+}
+
+#badge {
+  width: 10%; 
+}
